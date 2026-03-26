@@ -85,7 +85,7 @@ curl http://127.0.0.1:8000/sales/summary
 curl http://127.0.0.1:8000/sales/region/Sudeste
 ```
 
-## Destaque para currículo
+## Destaque 
 
 **API de vendas com FastAPI e Python**
 - Desenvolvi uma API REST para disponibilização de dados de vendas para consumo analítico.
