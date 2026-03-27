@@ -1,19 +1,26 @@
 # FastAPI Sales API
 
-API REST desenvolvida com FastAPI para disponibilizar dados de vendas de forma simples, organizada e pronta para consumo analítico.
+API RESTful desenvolvida com FastAPI para exposição de dados de vendas, com foco em consumo analítico, organização de dados e integração com sistemas.
 
-Este projeto simula uma pequena camada de serviço sobre dados de vendas, expondo endpoints para consulta geral, filtro por região, resumo de receita e health check.
+A aplicação implementa uma camada de serviço responsável por disponibilizar métricas de vendas, permitindo consultas, filtros dinâmicos e agregações de forma estruturada.
 
-## O que este projeto demonstra
+## 🔍 O que este projeto demonstra
 
-- construção de API com FastAPI
-- organização modular em rotas, schemas e serviços
-- leitura de dados com Pandas
-- serialização de respostas
-- filtros por parâmetros de consulta
-- documentação automática com Swagger
-- testes automatizados com pytest
+- Desenvolvimento de APIs REST com FastAPI seguindo boas práticas
+- Arquitetura em camadas (routes, services, schemas)
+- Processamento e manipulação de dados com Pandas
+- Implementação de filtros dinâmicos via query parameters
+- Serialização e validação de dados com Pydantic
+- Estruturação de endpoints para consumo analítico
+- Documentação automática com Swagger/OpenAPI
+- Testes automatizados com pytest
 
+## 🧠 Regras de negócio implementadas
+
+- Filtro de vendas por região e categoria
+- Cálculo de métricas agregadas (ex: receita total)
+- Estrutura de resposta padronizada para consumo analítico
+- 
 ## Estrutura
 
 ```text
@@ -53,15 +60,16 @@ Depois de rodar a aplicação, acesse:
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
-## Endpoints
+## 📡 Endpoints
 
-### Health check
-- `GET /health`
+### Health Check
+- `GET /health` → Verifica o status da API
 
 ### Vendas
-- `GET /sales`
-- `GET /sales/summary`
-- `GET /sales/region/{region}`
+- `GET /sales` → Retorna todos os registros de vendas
+- `GET /sales?category={categoria}` → Filtra vendas por categoria
+- `GET /sales/region/{region}` → Filtra vendas por região
+- `GET /sales/summary` → Retorna métricas agregadas de vendas
 
 ## Exemplos de uso
 
@@ -85,6 +93,15 @@ curl http://127.0.0.1:8000/sales/summary
 curl http://127.0.0.1:8000/sales/region/Sudeste
 ```
 
+## ⚙️ Tecnologias utilizadas
+
+- FastAPI
+- Python
+- Pandas
+- Pydantic
+- Pytest
+- Uvicorn
+  
 ## Destaque 
 
 **API de vendas com FastAPI e Python**
